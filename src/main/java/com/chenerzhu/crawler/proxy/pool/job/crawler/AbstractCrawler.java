@@ -5,8 +5,9 @@ import com.chenerzhu.crawler.proxy.pool.entity.ProxyIp;
 import com.chenerzhu.crawler.proxy.pool.entity.WebPage;
 import com.chenerzhu.crawler.proxy.pool.job.scheduler.AbstractSchedulerJob;
 import com.chenerzhu.crawler.proxy.pool.util.HttpClientUtils;
-import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -17,8 +18,9 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * @author chenerzhu
  * @create 2018-09-02 13:40
  **/
-@Slf4j
 public abstract class AbstractCrawler extends AbstractSchedulerJob implements ICrawler, Runnable {
+	static Logger log = LoggerFactory.getLogger(AbstractCrawler.class);
+	
     protected ConcurrentLinkedQueue<ProxyIp> proxyIpQueue;
     protected String pageUrl;
     protected WebPage webPage;

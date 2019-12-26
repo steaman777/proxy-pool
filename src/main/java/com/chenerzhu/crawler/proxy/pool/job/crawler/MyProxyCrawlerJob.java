@@ -11,6 +11,9 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * @author chenerzhu
  * @create 2018-09-08 16:35
@@ -18,6 +21,8 @@ import java.util.concurrent.TimeUnit;
  **/
 @Slf4j
 public class MyProxyCrawlerJob extends AbstractCrawler {
+	static Logger log = LoggerFactory.getLogger(MyProxyCrawlerJob.class);
+	
     public MyProxyCrawlerJob(ConcurrentLinkedQueue<ProxyIp> proxyIpQueue, String pageUrl) {
         super(proxyIpQueue, pageUrl);
     }

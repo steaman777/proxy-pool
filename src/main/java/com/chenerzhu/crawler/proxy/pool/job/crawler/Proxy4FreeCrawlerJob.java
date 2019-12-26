@@ -5,6 +5,8 @@ import com.chenerzhu.crawler.proxy.pool.entity.WebPage;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Date;
 import java.util.concurrent.BlockingQueue;
@@ -18,6 +20,8 @@ import java.util.concurrent.TimeUnit;
  **/
 @Slf4j
 public class Proxy4FreeCrawlerJob extends AbstractCrawler {
+	static Logger log = LoggerFactory.getLogger(Proxy4FreeCrawlerJob.class);
+	
     public Proxy4FreeCrawlerJob(ConcurrentLinkedQueue<ProxyIp> proxyIpQueue, String pageUrl) {
         super(proxyIpQueue, pageUrl);
     }

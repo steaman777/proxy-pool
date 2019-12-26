@@ -2,7 +2,12 @@ package com.chenerzhu.crawler.proxy.pool.listener;
 
 import com.chenerzhu.crawler.proxy.pool.job.crawler.CrawlerJob;
 import com.chenerzhu.crawler.proxy.pool.job.scheduler.SchedulerJob;
+import com.chenerzhu.crawler.proxy.pool.job.scheduler.ValidateRedisSchedulerJob;
+
 import lombok.extern.slf4j.Slf4j;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletContextEvent;
@@ -16,6 +21,8 @@ import javax.servlet.annotation.WebListener;
 @Slf4j
 @WebListener
 public class JobContextListener implements ServletContextListener {
+	static Logger log = LoggerFactory.getLogger(JobContextListener.class);
+	
     @Autowired
     private SchedulerJob schedulerJob;
     @Autowired

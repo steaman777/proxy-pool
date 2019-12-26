@@ -2,6 +2,9 @@ package com.chenerzhu.crawler.proxy.pool.listener;
 
 import com.chenerzhu.crawler.proxy.pool.context.SpringContextHolder;
 import lombok.extern.slf4j.Slf4j;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -14,6 +17,8 @@ import javax.servlet.ServletContextEvent;
  **/
 @Slf4j
 public class SpringContextListener extends ContextLoaderListener {
+	static Logger log = LoggerFactory.getLogger(SpringContextListener.class);
+	
     public void contextInitialized(ServletContextEvent event) {
         super.contextInitialized(event);
         WebApplicationContext webApplicationContext =

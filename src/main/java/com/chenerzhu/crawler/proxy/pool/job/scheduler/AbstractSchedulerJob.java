@@ -1,6 +1,7 @@
 package com.chenerzhu.crawler.proxy.pool.job.scheduler;
 
 import com.chenerzhu.crawler.proxy.pool.entity.ProxyIp;
+import com.chenerzhu.crawler.proxy.pool.job.crawler.XicidailiCrawlerJob;
 import com.chenerzhu.crawler.proxy.pool.job.execute.ISchedulerJobExecutor;
 import com.chenerzhu.crawler.proxy.pool.job.execute.impl.SchedulerJobExecutor;
 import com.chenerzhu.crawler.proxy.pool.thread.ThreadFactory;
@@ -8,12 +9,17 @@ import com.chenerzhu.crawler.proxy.pool.util.ProxyUtils;
 
 import java.util.concurrent.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * @author chenerzhu
  * @create 2018-08-30 10:27
  **/
 public abstract class AbstractSchedulerJob implements Runnable {
+	static Logger log = LoggerFactory.getLogger(AbstractSchedulerJob.class);
+	
     private volatile transient ExecutorService executorService = Executors.newCachedThreadPool(new ThreadFactory("validate"));
 
     public Future<?> execute(Callable<?> callable) {

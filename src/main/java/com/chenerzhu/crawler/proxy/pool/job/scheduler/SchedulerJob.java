@@ -3,6 +3,9 @@ package com.chenerzhu.crawler.proxy.pool.job.scheduler;
 import com.chenerzhu.crawler.proxy.pool.job.execute.ISchedulerJobExecutor;
 import com.chenerzhu.crawler.proxy.pool.job.execute.impl.SchedulerJobExecutor;
 import lombok.extern.slf4j.Slf4j;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +21,8 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @Component
 public class SchedulerJob implements Runnable {
+	static Logger log = LoggerFactory.getLogger(SchedulerJob.class);
+	
     private static ISchedulerJobExecutor schedulerJobExecutor = new SchedulerJobExecutor(10, "schedulerJob");
     @Resource
     @Qualifier("syncDbSchedulerJob")

@@ -58,4 +58,106 @@ public class ProxyIp implements Serializable {
     @Column(scale=3,precision = 5)
     @JSONField(serialize = false)
     private double availableRate;//可用率
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getIp() {
+		return ip;
+	}
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+	public int getPort() {
+		return port;
+	}
+	public void setPort(int port) {
+		this.port = port;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getAnonymity() {
+		return anonymity;
+	}
+	public void setAnonymity(String anonymity) {
+		this.anonymity = anonymity;
+	}
+	public boolean isAvailable() {
+		return available;
+	}
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
+	public Date getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+	public Date getLastValidateTime() {
+		return lastValidateTime;
+	}
+	public void setLastValidateTime(Date lastValidateTime) {
+		this.lastValidateTime = lastValidateTime;
+	}
+	public int getValidateCount() {
+		return validateCount;
+	}
+	public void setValidateCount(int validateCount) {
+		this.validateCount = validateCount;
+	}
+	public int getAvailableCount() {
+		return availableCount;
+	}
+	public void setAvailableCount(int availableCount) {
+		this.availableCount = availableCount;
+	}
+	public int getUnAvailableCount() {
+		return unAvailableCount;
+	}
+	public void setUnAvailableCount(int unAvailableCount) {
+		this.unAvailableCount = unAvailableCount;
+	}
+	public long getResponseTime() {
+		return responseTime;
+	}
+	public void setResponseTime(long responseTime) {
+		this.responseTime = responseTime;
+	}
+	public long getRequestTime() {
+		return requestTime;
+	}
+	public void setRequestTime(long requestTime) {
+		this.requestTime = requestTime;
+	}
+	public long getUseTime() {
+		return useTime;
+	}
+	public void setUseTime(long useTime) {
+		this.useTime = useTime;
+	}
+	public double getAvailableRate() {
+		return availableRate;
+	}
+	public void setAvailableRate(double availableRate) {
+		this.availableRate = availableRate;
+	}
 }

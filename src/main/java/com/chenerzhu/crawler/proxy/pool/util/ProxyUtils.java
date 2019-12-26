@@ -3,6 +3,9 @@ package com.chenerzhu.crawler.proxy.pool.util;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import sun.net.www.protocol.https.Handler;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -22,6 +25,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  **/
 @Slf4j
 public final class ProxyUtils {
+	static Logger log = LoggerFactory.getLogger(ProxyUtils.class);
+	
     //private static final String VALIDATE_URL = "http://115.239.211.112";
     private static final String VALIDATE_URL = "http://www.baidu.com/";
 

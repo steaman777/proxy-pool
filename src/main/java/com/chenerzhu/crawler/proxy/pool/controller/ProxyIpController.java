@@ -3,11 +3,15 @@ package com.chenerzhu.crawler.proxy.pool.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializeConfig;
+import com.chenerzhu.crawler.proxy.pool.context.SpringContextHolder;
 import com.chenerzhu.crawler.proxy.pool.entity.ProxyIp;
 import com.chenerzhu.crawler.proxy.pool.entity.Result;
 import com.chenerzhu.crawler.proxy.pool.service.IProxyIpRedisService;
 import com.chenerzhu.crawler.proxy.pool.service.IProxyIpService;
 import lombok.extern.slf4j.Slf4j;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -28,9 +32,10 @@ import java.util.List;
  * @author chenerzhu
  * @create 2018-08-29 19:51
  **/
-@Slf4j
 @Controller
 public class ProxyIpController extends BaseController {
+	static Logger log = LoggerFactory.getLogger(ProxyIpController.class);
+	
     @Autowired
     private IProxyIpRedisService proxyIpRedisService;
 

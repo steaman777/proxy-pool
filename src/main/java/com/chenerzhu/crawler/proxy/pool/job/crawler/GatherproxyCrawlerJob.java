@@ -12,6 +12,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * @author chenerzhu
  * @create 2018-09-09 9:09
@@ -19,6 +22,8 @@ import java.util.regex.Pattern;
  **/
 @Slf4j
 public class GatherproxyCrawlerJob extends AbstractCrawler {
+	static Logger log = LoggerFactory.getLogger(GatherproxyCrawlerJob.class);
+	
     public GatherproxyCrawlerJob(ConcurrentLinkedQueue<ProxyIp> proxyIpQueue, String pageUrl) {
         super(proxyIpQueue, pageUrl);
     }

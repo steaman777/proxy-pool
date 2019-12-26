@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -28,6 +30,8 @@ import java.util.regex.Pattern;
  **/
 @Slf4j
 public class SpysOneCrawlerJob extends AbstractCrawler {
+	static Logger log = LoggerFactory.getLogger(SpysOneCrawlerJob.class);
+	
     public SpysOneCrawlerJob(ConcurrentLinkedQueue<ProxyIp> proxyIpQueue, String pageUrl) {
         super(proxyIpQueue, pageUrl);
         this.httpMethd=HttpMethod.POST;

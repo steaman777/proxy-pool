@@ -1,10 +1,14 @@
 package com.chenerzhu.crawler.proxy.pool.job.crawler;
 
 import com.chenerzhu.crawler.proxy.pool.entity.ProxyIp;
+import com.chenerzhu.crawler.proxy.pool.exception.ProxyPoolExceptionHandler;
 import com.chenerzhu.crawler.proxy.pool.job.execute.ISchedulerJobExecutor;
 import com.chenerzhu.crawler.proxy.pool.job.execute.impl.SchedulerJobExecutor;
 import com.chenerzhu.crawler.proxy.pool.service.IProxyIpService;
 import lombok.extern.slf4j.Slf4j;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,6 +23,8 @@ import com.chenerzhu.crawler.proxy.pool.thread.ThreadFactory;
 @Component
 @SuppressWarnings("unchecked")
 public class CrawlerJob implements Runnable {
+	static Logger log = LoggerFactory.getLogger(CrawlerJob.class);
+	
     private volatile static ExecutorService executorService= Executors.newFixedThreadPool(5,new ThreadFactory("crawlerJob-consumer"));
 
     private ISchedulerJobExecutor schedulerJobExecutor=new SchedulerJobExecutor(30,"crawlerJob-producer");

@@ -1,11 +1,16 @@
 package com.chenerzhu.crawler.proxy.pool.context;
 
 import lombok.extern.slf4j.Slf4j;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
+
+import com.chenerzhu.crawler.proxy.pool.job.crawler.AbstractCrawler;
 
 /**
  * @author chenerzhu
@@ -13,6 +18,7 @@ import org.springframework.stereotype.Component;
  **/
 @Slf4j
 public class SpringContextHolder implements ApplicationContextAware, DisposableBean {
+	static Logger log = LoggerFactory.getLogger(SpringContextHolder.class);
     private static ApplicationContext applicationContext;
 
     private SpringContextHolder() {

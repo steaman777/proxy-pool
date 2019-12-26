@@ -2,7 +2,11 @@ package com.chenerzhu.crawler.proxy.pool.service.impl;
 
 import com.chenerzhu.crawler.proxy.pool.common.RedisKey;
 import com.chenerzhu.crawler.proxy.pool.entity.ProxyIp;
+import com.chenerzhu.crawler.proxy.pool.listener.SpringContextListener;
 import com.chenerzhu.crawler.proxy.pool.service.IProxyIpRedisService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -19,6 +23,8 @@ import java.util.Set;
  **/
 @Service
 public class ProxyIpRedisServiceImpl implements IProxyIpRedisService {
+	static Logger log = LoggerFactory.getLogger(ProxyIpRedisServiceImpl.class);
+	
     @Autowired
     private RedisTemplate<String, Serializable> redisCacheTemplate;
 

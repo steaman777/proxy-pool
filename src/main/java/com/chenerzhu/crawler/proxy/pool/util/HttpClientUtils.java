@@ -1,6 +1,8 @@
 package com.chenerzhu.crawler.proxy.pool.util;
 
 import com.chenerzhu.crawler.proxy.pool.common.HttpMethod;
+import com.chenerzhu.crawler.proxy.pool.service.impl.ProxyIpServiceImpl;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -21,6 +23,8 @@ import org.apache.http.impl.client.StandardHttpRequestRetryHandler;
 import org.apache.http.impl.conn.BasicHttpClientConnectionManager;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 
 import javax.net.ssl.SSLContext;
@@ -39,6 +43,8 @@ import java.util.*;
  **/
 @Slf4j
 public class HttpClientUtils {
+	static Logger log = LoggerFactory.getLogger(HttpClientUtils.class);
+	
     private static final String DEFAULT_CHARSET = "UTF-8";
     private static RequestConfig reqConf = null;
     private static StandardHttpRequestRetryHandler standardHandler = null;

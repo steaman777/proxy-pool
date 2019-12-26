@@ -3,6 +3,9 @@ package com.chenerzhu.crawler.proxy.pool.job.scheduler;
 import com.chenerzhu.crawler.proxy.pool.entity.ProxyIp;
 import com.chenerzhu.crawler.proxy.pool.service.IProxyIpRedisService;
 import lombok.extern.slf4j.Slf4j;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,6 +27,8 @@ import java.util.stream.IntStream;
 @Component
 @SuppressWarnings("unchecked")
 public class ValidateRedisSchedulerJob extends AbstractSchedulerJob {
+	static Logger log = LoggerFactory.getLogger(ValidateRedisSchedulerJob.class);
+	
     @Autowired
     private IProxyIpRedisService proxyIpRedisService;
 

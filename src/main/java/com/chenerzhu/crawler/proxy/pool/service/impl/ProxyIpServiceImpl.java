@@ -4,6 +4,9 @@ import com.chenerzhu.crawler.proxy.pool.entity.ProxyIp;
 import com.chenerzhu.crawler.proxy.pool.repository.IProxyIpRepository;
 import com.chenerzhu.crawler.proxy.pool.service.IProxyIpService;
 import com.chenerzhu.crawler.proxy.pool.util.ProxyUtils;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -24,6 +27,8 @@ import java.util.List;
  **/
 @Service("proxyIpService")
 public class ProxyIpServiceImpl implements IProxyIpService {
+	static Logger log = LoggerFactory.getLogger(ProxyIpServiceImpl.class);
+	
     @Autowired
     private IProxyIpRepository proxyIpRepository;
 

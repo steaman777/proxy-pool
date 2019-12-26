@@ -5,6 +5,8 @@ import com.chenerzhu.crawler.proxy.pool.entity.WebPage;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -23,6 +25,9 @@ import java.util.regex.Pattern;
  **/
 @Slf4j
 public class ProxynovaCrawlerJob extends AbstractCrawler {
+	static Logger log = LoggerFactory.getLogger(ProxynovaCrawlerJob.class);
+	
+	
     public ProxynovaCrawlerJob(ConcurrentLinkedQueue<ProxyIp> proxyIpQueue, String pageUrl) {
         super(proxyIpQueue, pageUrl);
     }
